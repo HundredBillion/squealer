@@ -1,2 +1,19 @@
 <h1 class="text-center">Pages#home</h1>
-<!--  -->
+
+<%= form_with(model: @squeal, local: true) do |form| %>
+
+
+  <div class="field">
+    <%= form.text_field :comment, placeholder: 'Squeal about something' %>
+  </div>
+  
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
+
+<% @squeals.each do |s| %>
+  <%= s.comment %>
+  <br/>
+<%end%>
+

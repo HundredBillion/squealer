@@ -28,8 +28,9 @@ class SquealsController < ApplicationController
 
     respond_to do |format|
       if @squeal.save
-        format.html { redirect_to @squeal, notice: 'Squeal was successfully created.' }
-        format.json { render :show, status: :created, location: @squeal }
+        # format.html { redirect_to @squeal, notice: 'Squeal was successfully created.' }
+        # format.json { render :show, status: :created, location: @squeal }
+        format.html { redirect_to root_path }
       else
         format.html { render :new }
         format.json { render json: @squeal.errors, status: :unprocessable_entity }
@@ -69,6 +70,6 @@ class SquealsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def squeal_params
-      params.require(:squeal).permit(:comment, :user_id)
+      params.require(:squeal).permit(:comment, :user_id).merge(user: current_user)
     end
 end

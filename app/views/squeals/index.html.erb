@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Squeals</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Comment</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @squeals.each do |squeal| %>
+      <tr>
+        <td><%= squeal.comment %></td>
+        <td><%= link_to 'Show', squeal %></td>
+        <td><%= link_to 'Edit', edit_squeal_path(squeal) %></td>
+        <td><%= link_to 'Destroy', squeal, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Squeal', new_squeal_path %>

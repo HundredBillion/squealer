@@ -1,0 +1,24 @@
+<%= form_with(model: squeal, local: true) do |form| %>
+  <% if squeal.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(squeal.errors.count, "error") %> prohibited this squeal from being saved:</h2>
+
+      <ul>
+        <% squeal.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.text_field :comment, placeholder: 'Squeal about something' %>
+  </div>
+  <div class="field">
+    <%= form.text_field :user_id, placeholder: 'user id' %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

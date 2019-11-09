@@ -31,3 +31,5 @@ yarn-debug.log*
 .yarn-integrity
 config/environments/development.rb
 config/environments/production.rb
+# Ignore application configuration
+/config/application.yml

@@ -1,5 +1,6 @@
 Rails.application.configure do
   # Sendgrip Heroku code
+  Rails.application.routes.default_url_options[:host] = 'https://squealer-david-lee.herokuapp.com'
   
   ActionMailer::Base.smtp_settings = {
     :user_name => ENV['SENDGRID_USERNAME'],
@@ -11,7 +12,6 @@ Rails.application.configure do
     :enable_starttls_auto => true
   }
   # Settings specified here will take precedence over those in config/application.rb.
-
   # Code is not reloaded between requests.
   config.cache_classes = true
 

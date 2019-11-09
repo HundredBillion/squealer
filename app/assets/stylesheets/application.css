@@ -17,5 +17,9 @@
 
  body {
   margin:0px;
-  
+  font-family: 'McLaren', cursive;
+}
+
+.devise-form{
+  margin-top: 5em;
 }

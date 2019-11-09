@@ -1,15 +1,14 @@
 Rails.application.configure do
   # Sendgrip Heroku code
-  config.action_mailer.default_url_options = { host:'https://squealer-david-lee.herokuapp.com'}
-  ActionMailer::Base.deliver_method = :smtp
+  
   ActionMailer::Base.smtp_settings = {
-    address: 'smtp.sendgrid.net',
-    port: 587,
-    authentication: plain,
-    user_name: ENV['SENDGRID_USERNAME'],
-    password:  ENV['SENDGRID_PASSWORD'],
-    domain:'heroku.com',
-    enable_starttls_auto: true
+    :user_name => ENV['SENDGRID_USERNAME'],
+    :password => ENV['SENDGRID_PASSWORD'],
+    :domain => 'https://squealer-david-lee.herokuapp.com',
+    :address => 'smtp.sendgrid.net',
+    :port => 587,
+    :authentication => :plain,
+    :enable_starttls_auto => true
   }
   # Settings specified here will take precedence over those in config/application.rb.
 

@@ -14,9 +14,10 @@
   
     <%= render 'shared/navbar'%>
     <%= render 'shared/message'%>
-    <div class="container">
+    <div class="<%= 'container' if user_signed_in? %>">
       <%= yield %>
     </div>
+    
 
   </body>
 </html>

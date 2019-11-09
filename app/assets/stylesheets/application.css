@@ -19,7 +19,41 @@
   margin:0px;
   font-family: 'McLaren', cursive;
 }
-
+/* all devise forms need a little space at the top */
 .devise-form{
   margin-top: 5em;
+}
+/*landing page css... because firsst impressions are important */
+.landing-page-left{
+  background-color: rgba(255, 192, 203, .8);
+  height: 100vh;
+  background-image: url('pigbackground.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: auto;
+  position: relative;
+}
+.landing-page-right{
+  background-color:rgba(255,127,80, .8);
+  height: 100vh;
+}
+.hero-text {
+  text-align: center;
+  position: relative;
+  top: 20%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+}
+.hero-text-center {
+  text-align: center;
+  position: relative;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+}
+.landing-page-btn{
+  margin: 1em;
+  padding: .5em 3em .5em 3em;
 }

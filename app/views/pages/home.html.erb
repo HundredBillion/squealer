@@ -1,38 +1,36 @@
-<h1 class="text-center">SQUEALER</h1>
-
-
-<div class="row">
-  <div class="col-md-6 offset-md-3">
-    <div class="card">
-      <div class="card-body">
-        <%= form_with(model: @squeal, local: true) do |form| %>
-          <div class="field">
-            <%= form.text_field :comment, placeholder: "Squeal about something", class:"squeal-card-text" %>
-          </div>
-          
-          <div class="actions">
-            <%= form.submit "Squeal", class:"btn btn-primary"%>
-          </div>
-        <% end %>
-      </div>
-    </div>
-  </div>
-</div>
-
-<div>
- 
-</div>
-
-<div class="container squeal-container">
-  <% @squeals.each do |s| %>
-    <div class="row"> 
-      <div class="col-md-6 offset-md-3">
-        <div class="squeal-box">
-          <%= s.comment %>
-          <br/>
+<% if user_signed_in? %>
+  <h1 class="text-center">SQUEALER</h1>
+  <div class="row">
+    <div class="col-md-6 offset-md-3">
+      <div class="card">
+        <div class="card-body">
+          <%= form_with(model: @squeal, local: true) do |form| %>
+            <div class="field">
+              <%= form.text_field :comment, placeholder: "Squeal about something", class:"squeal-card-text" %>
+            </div>
+            
+            <div class="actions">
+              <%= form.submit "Squeal", class:"btn btn-primary"%>
+            </div>
+          <% end %>
         </div>
       </div>
     </div>
-  <%end%>
-</div>
+  </div>
+
+  <div class="container squeal-container">
+    <% @squeals.each do |s| %>
+      <div class="row"> 
+        <div class="col-md-6 offset-md-3">
+          <div class="squeal-box">
+            <%= s.comment %>
+            <br/>
+          </div>
+        </div>
+      </div>
+    <%end%>
+  </div>
+<% else %>
+  <%= render 'landing_page'%>
+<%end%>
 

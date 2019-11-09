@@ -4,7 +4,7 @@ class PagesController < ApplicationController
     @users = User.all
     @squeal = Squeal.new
 
-    @squeals = Squeal.where(user_id: current_user)
+    @squeals = Squeal.where(user_id: current_user).order("created_at DESC")
   end
 
   def show

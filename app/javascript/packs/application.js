@@ -19,12 +19,3 @@ import 'bootstrap/dist/js/bootstrap';
 
 
 
-// import toastr from 'toastr';
-
-// toastr.options = {
-//     "closeButton": true
-//     .... add options here ...
-// };
-
-// global.toastr = toastr;
-

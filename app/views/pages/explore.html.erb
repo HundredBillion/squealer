@@ -2,12 +2,13 @@
 
 <div class="container squeal-container">
     <% @squeals.each do |s| %>
-      <div class="row"> 
+      <div class="row pb-1"> 
         <div class="col-md-6 offset-md-3">
           <div class="squeal-box">
             <div class="row">
               <%= s.comment %>
             </div>
+            <div class="float-left pt-2"><button class="btn btn-outline-primary btn-sm">FOLLOW</button></div>
             <div class="float-right"><%= s.user.fullname%></div>
             <br/>
             <div class="float-right"><%= s.created_at.strftime("%B %-d @%-I:%M %p")%></div>

@@ -7,6 +7,6 @@ class PagesController < ApplicationController
   end
 
   def explore
-    @squeals = Squeal.all
+    @squeals = Squeal.where.not(user_id:current_user.id).order("created_at DESC")
   end
 end

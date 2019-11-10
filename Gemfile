@@ -58,3 +58,5 @@ gem 'devise'
 gem 'sendgrid-ruby'
 
 gem 'figaro'
+
+gem 'pry', '~> 0.12.2'

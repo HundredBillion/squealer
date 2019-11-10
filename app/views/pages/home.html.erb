@@ -19,11 +19,15 @@
   </div>
 
   <div class="container squeal-container">
-    <% @squeals.each do |s| %>
+    <% @my_squeals.each do |s| %>
       <div class="row"> 
         <div class="col-md-6 offset-md-3">
           <div class="squeal-box">
-            <%= s.comment %>
+            <div class="row">
+              <%= s.comment %>
+            </div>
+            <div class="float-right"><%= s.user.fullname%></div>
+            
             <br/>
           </div>
         </div>

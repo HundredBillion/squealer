@@ -1,4 +1,4 @@
-class PagesController < ApplicationController
+class UsersController < ApplicationController
   def home
     @users = User.all
     @squeal = Squeal.new
@@ -14,10 +14,8 @@ class PagesController < ApplicationController
 
   def explore
     @squeals = Squeal.where.not(user_id:current_user.id).order("created_at DESC")
+  end
+
+
   
-  end
-
-  def profile
-
-  end
 end

@@ -14,5 +14,10 @@ class PagesController < ApplicationController
 
   def explore
     @squeals = Squeal.where.not(user_id:current_user.id).order("created_at DESC")
+  
+  end
+
+  def profile
+
   end
 end

@@ -8,7 +8,10 @@
             <div class="row">
               <%= s.comment %>
             </div>
-            <div class="float-left pt-2"><button class="btn btn-outline-primary btn-sm">FOLLOW</button></div>
+            <div class="float-left pt-2" id="user-<%=s.user_id%>">
+              <!-- <button class="btn btn-outline-primary btn-sm">FOLLOW</button> -->
+              <%= button_to "FOLLOW", follow_user_path(s.user_id), class:"btn btn-outline-primary btn-sm" %>
+            </div>
             <div class="float-right"><%= s.user.fullname%></div>
             <br/>
             <div class="float-right"><%= s.created_at.strftime("%B %-d @%-I:%M %p")%></div>

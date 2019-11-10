@@ -1,22 +1,37 @@
 <% if user_signed_in? %>
   <h1 class="text-center my-5">SQUEALER</h1>
-  <div class="row">
-    <div class="col-md-6 offset-md-3">
-      <div class="card">
-        <div class="card-body">
-          <%= form_with(model: @squeal, local: true) do |form| %>
-            <div class="field">
-              <%= form.text_field :comment, placeholder: "Squeal about something", class:"squeal-card-text" %>
-            </div>
-            
-            <div class="actions">
-              <%= form.submit "Squeal", class:"btn btn-primary"%>
-            </div>
-          <% end %>
+
+
+    <div class="row">
+      <div class="col-md-3">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title text-center">Squealers I'm following</h5>
+            <p class=" card-text text-center">
+              <% @users_i_am_following.each do |u|%>
+                <%= u.fullname%>
+              <%end%>
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="card">
+          <div class="card-body">
+            <%= form_with(model: @squeal, local: true) do |form| %>
+              <div class="field">
+                <%= form.text_field :comment, placeholder: "Squeal about something", class:"squeal-card-text" %>
+              </div>
+              
+              <div class="actions">
+                <%= form.submit "Squeal", class:"btn btn-primary"%>
+              </div>
+            <% end %>
+          </div>
         </div>
       </div>
     </div>
-  </div>
+ 
 
   <div class="container squeal-container">
     <% @my_squeals.each do |s| %>
@@ -35,10 +50,6 @@
     <%end%>
   </div>
   <div>
-    <p>Users I'm following</p>
-    <% @users_i_am_following.each do |u|%>
-      <%= u.fullname%>
-    <%end%>
     <%= @squeals_of_users_i_am_following.each do |s| %>
       <%=s.comment%>
     <%end%>

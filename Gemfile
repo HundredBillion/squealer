@@ -60,3 +60,5 @@ gem 'sendgrid-ruby'
 gem 'figaro'
 
 gem 'pry', '~> 0.12.2'
+
+gem 'acts_as_follower', github: 'tcocca/acts_as_follower', branch: 'master'

@@ -11,4 +11,6 @@ class Follow < ApplicationRecord
     self.update_attribute(:blocked, true)
   end
 
+  
+
 end

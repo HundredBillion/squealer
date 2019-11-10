@@ -36,9 +36,12 @@
   </div>
   <div>
     <p>Users I'm following</p>
-    <%=@following.fullname%>
-    <p>Squeals of users I'm following</p>
-    <%=@following_squeals.comment%>
+    <% @users_i_am_following.each do |u|%>
+      <%= u.fullname%>
+    <%end%>
+    <%= @squeals_of_users_i_am_following.each do |s| %>
+      <%=s.comment%>
+    <%end%>
   </div>
 <% else %>
   <%= render 'landing_page'%>

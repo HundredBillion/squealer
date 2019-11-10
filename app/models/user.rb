@@ -7,13 +7,9 @@ class User < ApplicationRecord
   validates :fullname, presence: true, length: {maximum: 50}
 
   has_many :squeals
-
   #for the act_as_follower gem
-  def acts_as_followable
-    acts_as_followable
-  end
-  def acts_as_follower
-    acts_as_follower
-  end
-
+  acts_as_followable
+  acts_as_follower
+  
+  
 end

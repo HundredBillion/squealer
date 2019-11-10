@@ -20,7 +20,7 @@
 
   <div class="container squeal-container">
     <% @my_squeals.each do |s| %>
-      <div class="row"> 
+      <div class="row pb-1"> 
         <div class="col-md-6 offset-md-3">
           <div class="squeal-box">
             <div class="row">
@@ -28,6 +28,7 @@
             </div>
             <div class="float-right"><%= s.user.fullname%></div>
             <br/>
+            <div class="float-right"><%= s.created_at.strftime("%B %-d @%-I:%M %p")%></div>
           </div>
         </div>
       </div>

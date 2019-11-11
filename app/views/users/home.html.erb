@@ -7,11 +7,15 @@
         <div class="card">
           <div class="card-body">
             <h5 class="card-title text-center">Squealers I'm following</h5>
-            <p class=" card-text text-center">
+            <h6 class="card-text">
+              <hr/>
               <% @users_i_am_following.each do |u|%>
-                <%= u.fullname%>
+                <div class="float-left"><%= u.fullname%></div>
+                <div class="float-right">
+                  <%= button_to 'Unfollow', user_follow_path(u, current_user.get_follow(u).id), method: :delete, class: 'btn btn-outline-primary btn-sm' %>
+                </div>
               <%end%>
-            </p>
+              </h6>
           </div>
         </div>
       </div>

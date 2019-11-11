@@ -34,7 +34,7 @@
  
 
   <div class="container squeal-container">
-    <% @my_squeals.each do |s| %>
+    <%   @collected_and_sorted_squeals.each do |s| %>
       <div class="row pb-1"> 
         <div class="col-md-6 offset-md-3">
           <div class="squeal-box">
@@ -49,10 +49,10 @@
       </div>
     <%end%>
   </div>
-  <div>
-    <%= @squeals_of_users_i_am_following.each do |s| %>
-      <%=s.comment%>
+  <!-- <div>
+    <% @my_squeals_plus_users_i_am_following_squeals.each do |s| %>
+      <%= s.comment%>
     <%end%>
-  </div>
+  </div> -->
 
 

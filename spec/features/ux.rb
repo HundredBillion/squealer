@@ -27,6 +27,20 @@ feature 'registered user can perform basic website funtions' do
       expect(page).to have_contenct("my first squeal")
     end
 
+    scenario 'registered user can follow another user' do
+      before(:each) do
+        @user1 = FB.create 
+        @user2 = FB.create
 
+        @user1_squeal = FB.create
+        @user2_squeal = FB.create
+      end
+
+      @user1 signs_in
+      visit user_explore_path
+      click_button "Follow"
+      visit users_home_path
+      expect(page). to have_content("@user2.fullname")
+    end
 
 end

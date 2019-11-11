@@ -1,13 +1,32 @@
 require 'rails_helper'
 require 'capybara/rails'
 
-feature 'registered user logs in and should be directed to squeal page' do
-  scenario 'user logs in from the home page' do
+feature 'registered user can log in and out' do
+
+  scenario 'registered user logs in from the landing page and is redirected to registerd users home page' do
     visit root_path
-
-    log_in 'Full Name', with: 'user'
-    click_button 'Create Foobar'
-
-    expect(page).to have_css '.foobar-name', 'My foobar'
+    user signs_in
+    expect(page).to have_current_path(users_home_path)
   end
+
+  scenario 'registered user logs out from the home page and is redirected to landing page' do
+    visit root path
+    user signs_in
+    user logs_out
+    expect(page).to have_current_path(root_path)
+  end
+
+end
+
+feature 'registered user can perform basic website funtions' do
+
+    scenario 'registered user posts a squeal' do
+      vist root_path
+      user signs_in
+      user submits squeal form with text "my first squeal"
+      expect(page).to have_contenct("my first squeal")
+    end
+
+
+
 end

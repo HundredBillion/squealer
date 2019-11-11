@@ -9,7 +9,6 @@
               <%= s.comment %>
             </div>
             <div class="float-left pt-2" id="user-<%=s.user_id%>">
-              <!-- <button class="btn btn-outline-primary btn-sm">FOLLOW</button> -->
               <%= button_to "FOLLOW", user_follows_path(s.user_id), class:"btn btn-outline-primary btn-sm" %>
             </div>
             <div class="float-right"><%= s.user.fullname%></div>

@@ -1,4 +1,8 @@
 class UsersController < ApplicationController
+  
+  def landing_page
+  end
+  
   def home
     @users = User.all
     @squeal = Squeal.new

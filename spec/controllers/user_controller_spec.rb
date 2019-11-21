@@ -4,9 +4,7 @@ RSpec.describe UsersController, type: :controller do
 
     login_user
 
-    let(:valid_attributes) {
-        { :fullname => "Joey Shmoey", :email => "text@testing.com", :password => "asdf123" }
-    }
+ 
 
     let(:valid_session) { {} }
 

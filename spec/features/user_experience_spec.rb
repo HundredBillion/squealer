@@ -9,6 +9,18 @@ RSpec.describe "Home Page", type: :system do
     visit "users/landing_page"
     expect(page).to have_text("Tired of the blah blah blah?")
   end
+
+  it 'allows user to create account' do
+    visit "users/landing_page"
+    click_link "sign-up"
+    fill_in "full name",	:with=> "David Lee" 
+    fill_in "email",	with: "david.lee@email.com"
+    fill_in "password",	with: "password1!"  
+    click_on ("Sign Up")
+    binding.pry
+  
+    expect(page).to have_current_path "root" 
+  end
 end
 
 # feature 'registered user can log in and out' do
